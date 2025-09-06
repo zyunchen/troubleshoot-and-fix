@@ -542,13 +542,18 @@ body {
 
 .contact-info {
     display: grid;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .contact-item {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(248, 231, 28, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid #F8E71C;
 }
 
 .contact-item i {
@@ -607,7 +612,16 @@ body {
 .footer-section p {
     opacity: 0.8;
     line-height: 1.6;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-section p i {
+    width: 16px;
+    text-align: center;
+    color: #F8E71C;
 }
 
 .footer-section h4 {

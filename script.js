@@ -48,15 +48,11 @@ contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
     // Get form data
-    const formData = new FormData(contactForm);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const phone = formData.get('phone');
-    const service = formData.get('service');
-    const message = formData.get('message');
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
     
     // Basic validation
-    if (!name || !email || !service || !message) {
+    if (!email || !message) {
         showNotification('Please fill in all required fields.', 'error');
         return;
     }
@@ -68,20 +64,161 @@ contactForm.addEventListener('submit', function(e) {
         return;
     }
     
-    // Simulate form submission
+    // Show loading state
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
     
-    // Simulate API call
-    setTimeout(() => {
-        showNotification('Thank you! Your message has been sent. We\'ll get back to you within 24 hours.', 'success');
-        contactForm.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }, 2000);
+    // EmailJS parameters
+    const templateParams = {
+        from_email: email,
+        message: message,
+        to_email: 'troubleshootandfixhandyman@gmail.com'
+    };
+    
+    // Send email using EmailJS - Updated template ID
+    emailjs.send('service_j74lhje', 'template_qen7pf9', templateParams)
+        .then(function(response) {
+            showNotification('Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.', 'success');
+            contactForm.reset();
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }, function(error) {
+            console.error('EmailJS Error:', error);
+            showNotification('Sorry, there was an error sending your message. Please try again or contact us directly.', 'error');
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        });
 });
+
+// Email Modal System
+function showEmailModal(emailContent) {
+    // Remove existing modal
+    const existingModal = document.querySelector('.email-modal');
+    if (existingModal) {
+        existingModal.remove();
+    }
+    
+    // Create modal
+    const modal = document.createElement('div');
+    modal.className = 'email-modal';
+    modal.innerHTML = `
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Email Content Ready</h3>
+                    <button class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Copy the content below and paste it into your email app:</p>
+                    <textarea readonly class="email-textarea">${emailContent}</textarea>
+                    <div class="modal-buttons">
+                        <button class="btn btn-primary copy-btn">Copy to Clipboard</button>
+                        <button class="btn btn-secondary close-btn">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Add styles
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    `;
+    
+    const overlay = modal.querySelector('.modal-overlay');
+    overlay.style.cssText = `
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    `;
+    
+    const content = modal.querySelector('.modal-content');
+    content.style.cssText = `
+        background: white;
+        border-radius: 10px;
+        max-width: 600px;
+        width: 100%;
+        max-height: 80vh;
+        overflow-y: auto;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    `;
+    
+    const header = modal.querySelector('.modal-header');
+    header.style.cssText = `
+        padding: 20px;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    `;
+    
+    const body = modal.querySelector('.modal-body');
+    body.style.cssText = `
+        padding: 20px;
+    `;
+    
+    const textarea = modal.querySelector('.email-textarea');
+    textarea.style.cssText = `
+        width: 100%;
+        height: 200px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-family: monospace;
+        font-size: 14px;
+        resize: vertical;
+        margin: 15px 0;
+    `;
+    
+    const buttons = modal.querySelector('.modal-buttons');
+    buttons.style.cssText = `
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+    `;
+    
+    const closeBtn = modal.querySelector('.modal-close');
+    closeBtn.style.cssText = `
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #666;
+    `;
+    
+    // Add event listeners
+    closeBtn.addEventListener('click', () => modal.remove());
+    modal.querySelector('.close-btn').addEventListener('click', () => modal.remove());
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) modal.remove();
+    });
+    
+    modal.querySelector('.copy-btn').addEventListener('click', () => {
+        textarea.select();
+        document.execCommand('copy');
+        showNotification('Email content copied to clipboard!', 'success');
+    });
+    
+    // Add to page
+    document.body.appendChild(modal);
+}
 
 // Notification System
 function showNotification(message, type = 'info') {
@@ -182,19 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Phone number formatting
-const phoneInput = document.getElementById('phone');
-if (phoneInput) {
-    phoneInput.addEventListener('input', function(e) {
-        let value = e.target.value.replace(/\D/g, '');
-        if (value.length >= 6) {
-            value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
-        } else if (value.length >= 3) {
-            value = value.replace(/(\d{3})(\d{0,3})/, '($1) $2');
-        }
-        e.target.value = value;
-    });
-}
+// Phone number formatting removed - no longer needed
 
 // Service area information
 function showServiceArea() {
@@ -244,58 +369,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Quote calculator (basic)
-function calculateQuote() {
-    const service = document.getElementById('service').value;
-    const message = document.getElementById('message').value;
-    
-    if (!service || !message) {
-        showNotification('Please select a service and describe your project for a quote.', 'error');
-        return;
-    }
-    
-    // Basic quote estimates (in reality, this would be more sophisticated)
-    const baseRates = {
-        'general-repairs': 75,
-        'electrical': 100,
-        'plumbing': 90,
-        'painting': 60,
-        'furniture': 50,
-        'custom': 120,
-        'other': 80
-    };
-    
-    const baseRate = baseRates[service] || 80;
-    const complexity = message.length > 100 ? 1.5 : 1;
-    const estimatedHours = Math.ceil(Math.random() * 4) + 1; // 1-5 hours
-    const total = Math.round(baseRate * estimatedHours * complexity);
-    
-    const quoteMessage = `
-        <strong>Estimated Quote:</strong><br>
-        Service: ${document.querySelector(`option[value="${service}"]`).textContent}<br>
-        Estimated Time: ${estimatedHours} hours<br>
-        Estimated Cost: $${total} - $${total + 50}<br>
-        <small>Final quote provided after on-site assessment</small>
-    `;
-    
-    showNotification(quoteMessage, 'success');
-}
+// Quote calculator removed - no longer needed
 
-// Add quote button to form
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('contactForm');
-    const submitBtn = form.querySelector('button[type="submit"]');
-    
-    const quoteBtn = document.createElement('button');
-    quoteBtn.type = 'button';
-    quoteBtn.className = 'btn btn-secondary';
-    quoteBtn.textContent = 'Get Quick Quote';
-    quoteBtn.style.marginLeft = '1rem';
-    
-    quoteBtn.addEventListener('click', calculateQuote);
-    
-    submitBtn.parentNode.appendChild(quoteBtn);
-});
+// Quote button removed - no longer needed
 
 // Add loading states and better UX
 document.addEventListener('DOMContentLoaded', () => {
