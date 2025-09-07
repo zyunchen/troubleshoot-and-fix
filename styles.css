@@ -177,6 +177,14 @@ body {
     transform: translateY(-2px);
 }
 
+/* Service card guide button hover effect */
+.service-card a[href*="dishwasher-installation.html"]:hover {
+    background: #000 !important;
+    color: #F8E71C !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3) !important;
+}
+
 .nav-link::after {
     content: '';
     position: absolute;

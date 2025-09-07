@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dishwasher Installation Guide - Seattle Handyman Services</title>
+    <meta name="description" content="Professional dishwasher installation guide and troubleshooting tips for Seattle homeowners.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="images/seattle_handyman_icon.webp">
+    <link rel="shortcut icon" type="image/webp" href="images/seattle_handyman_icon.webp">
+    <link rel="apple-touch-icon" href="images/seattle_handyman_icon.webp">
+    
+    <style>
+        .page-header {
+            background: #F8E71C;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .page-content {
+            padding: 3rem 0;
+            background: #fff;
+        }
+        
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .article-header {
+            margin-bottom: 2rem;
+        }
+        
+        .article-title {
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .article-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #333;
+        }
+        
+        .article-content h3 {
+            color: #000;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+            font-weight: 600;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight-box {
+            background: #F8E71C;
+            border: 2px solid #000;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .highlight-box h4 {
+            color: #000;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #000;
+            color: #F8E71C;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+        
+        .contact-cta {
+            background: #000;
+            color: #F8E71C;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .contact-cta h3 {
+            color: #F8E71C;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-cta .btn {
+            background: #F8E71C;
+            color: #000;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-cta .btn:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .article-content {
+                font-size: 1rem;
+            }
+            
+            .highlight-box {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <div class="logo-container">
+                    <img src="images/seattle_handyman_icon.webp" alt="Seattle Handyman Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="logo-fallback" style="display: none;">
+                        <div class="logo-icon">
+                            <div class="hammer-head"></div>
+                            <div class="hammer-handle"></div>
+                        </div>
+                        <div class="logo-separator">
+                            <div class="nail-line"></div>
+                            <div class="nail-head"></div>
+                        </div>
+                    </div>
+                    <div class="logo-text">
+                        <div class="logo-seattle">Seattle</div>
+                        <div class="logo-handyman">Handyman</div>
+                    </div>
+                    </div>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link" data-en="Home" data-zh="首页">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#pricing" class="nav-link" data-en="Pricing" data-zh="价格">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#services" class="nav-link" data-en="Services" data-zh="服务">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link" data-en="About" data-zh="关于我们">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link" data-en="Contact" data-zh="联系我们">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <button class="language-switch" onclick="toggleLanguage()">
+                        <span class="lang-text" data-en="中文" data-zh="English">中文</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span data-en="Back to Home" data-zh="返回首页">Back to Home</span>
+            </a>
+            <h1 class="article-title" data-en="Dishwasher Installation Guide" data-zh="洗碗机安装指南">Dishwasher Installation Guide</h1>
+            <p class="article-meta" data-en="Professional tips and troubleshooting for Seattle homeowners" data-zh="为西雅图房主提供的专业技巧和故障排除">Professional tips and troubleshooting for Seattle homeowners</p>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="page-content">
+        <div class="article-container">
+            <div class="article-content">
+                <h3 data-en="Why Won't My New Dishwasher Drain?" data-zh="为什么新装的洗碗机无法排水？">Why Won't My New Dishwasher Drain?</h3>
+                
+                <p data-en="Recently, a regular customer asked me about dishwasher installation pricing. Since they're a repeat customer, I offered a discounted rate of $50. However, they mentioned they had already installed it themselves but were having drainage issues. I immediately knew what the problem was and provided a quick solution over the phone - free of charge!" data-zh="最近，一位老客户询问洗碗机安装价格。因为是老客户，我报了比较便宜的价格50美元。但是他说自己都装好了只是排水有问题，我大概猜到什么问题了，就语音说了下客户自己解决了，免费。">Recently, a regular customer asked me about dishwasher installation pricing. Since they're a repeat customer, I offered a discounted rate of $50. However, they mentioned they had already installed it themselves but were having drainage issues. I immediately knew what the problem was and provided a quick solution over the phone - free of charge!</p>
+
+                <div class="highlight-box">
+                    <h4 data-en="The Common Problem" data-zh="常见问题">The Common Problem</h4>
+                    <p data-en="When installing a new dishwasher, the installation process itself isn't complicated - there are plenty of online tutorials available. However, the drainage connection is where most people run into trouble, especially when connecting to a garbage disposal." data-zh="新增洗碗机要注意，其实安装不麻烦，网上教程也很多，但是排水管如果连接垃圾处理器，新的垃圾处理器图里面圈出来的地方是密封的，需要给打开才行。">When installing a new dishwasher, the installation process itself isn't complicated - there are plenty of online tutorials available. However, the drainage connection is where most people run into trouble, especially when connecting to a garbage disposal.</p>
+                    
+                    <div style="margin: 1.5rem 0; text-align: center;">
+                        <img src="images/dishwasher/diswasher_can_not_drain.jpg" 
+                             alt="Dishwasher Drain Problem Diagram" 
+                             style="max-width: 100%; height: auto; border-radius: 8px; border: 2px solid #000;"
+                             data-alt-en="Dishwasher Drain Problem Diagram"
+                             data-alt-zh="洗碗机排水问题示意图">
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666; font-style: italic;" 
+                           data-en="Diagram showing the circled area where the knockout plug needs to be removed" 
+                           data-zh="示意图显示需要移除敲除塞的圈出区域">Diagram showing the circled area where the knockout plug needs to be removed</p>
+                    </div>
+                </div>
+
+                <h3 data-en="The Solution" data-zh="解决方案">The Solution</h3>
+                
+                <p data-en="The issue is that new garbage disposals come with a sealed knockout plug in the dishwasher connection port (the circled area in the diagram). This plug must be removed before connecting your dishwasher's drain hose." data-zh="问题是新的垃圾处理器在洗碗机连接端口（图中圈出的区域）有一个密封的敲除塞。在连接洗碗机的排水软管之前，必须移除这个塞子。">The issue is that new garbage disposals come with a sealed knockout plug in the dishwasher connection port (the circled area in the diagram). This plug must be removed before connecting your dishwasher's drain hose.</p>
+
+                <h3 data-en="Step-by-Step Fix" data-zh="逐步修复">Step-by-Step Fix</h3>
+                
+                <p data-en="1. Turn off the garbage disposal and unplug it for safety" data-zh="1. 关闭垃圾处理器并拔掉电源以确保安全">1. Turn off the garbage disposal and unplug it for safety</p>
+                <p data-en="2. Locate the dishwasher connection port on your garbage disposal" data-zh="2. 在垃圾处理器上找到洗碗机连接端口">2. Locate the dishwasher connection port on your garbage disposal</p>
+                <p data-en="3. Use a screwdriver or hammer to carefully remove the knockout plug" data-zh="3. 使用螺丝刀或锤子小心地移除敲除塞">3. Use a screwdriver or hammer to carefully remove the knockout plug</p>
+                <p data-en="4. Connect your dishwasher's drain hose to the now-open port" data-zh="4. 将洗碗机的排水软管连接到现在开放的端口">4. Connect your dishwasher's drain hose to the now-open port</p>
+                <p data-en="5. Secure the connection with a hose clamp" data-zh="5. 用软管夹固定连接">5. Secure the connection with a hose clamp</p>
+
+                <div class="highlight-box">
+                    <h4 data-en="Pro Tip" data-zh="专业提示">Pro Tip</h4>
+                    <p data-en="Always check if the knockout plug has been removed before installing a new dishwasher. This simple step can save you hours of troubleshooting!" data-zh="在安装新洗碗机之前，一定要检查敲除塞是否已被移除。这个简单的步骤可以为您节省数小时的故障排除时间！">Always check if the knockout plug has been removed before installing a new dishwasher. This simple step can save you hours of troubleshooting!</p>
+                </div>
+
+                <h3 data-en="Need Help?" data-zh="需要帮助？">Need Help?</h3>
+                
+                <p data-en="If you're having issues with your dishwasher installation or any other home improvement projects, feel free to comment below or contact us directly. I'm always happy to help with simple questions!" data-zh="如果您在洗碗机安装或任何其他家居改善项目方面遇到问题，请随时在下方评论或直接联系我们。我很乐意帮助解决简单的问题！">If you're having issues with your dishwasher installation or any other home improvement projects, feel free to comment below or contact us directly. I'm always happy to help with simple questions!</p>
+
+                <div class="contact-cta">
+                    <h3 data-en="Need Professional Installation?" data-zh="需要专业安装？">Need Professional Installation?</h3>
+                    <p data-en="Let our experienced team handle your dishwasher installation and other home improvement needs." data-zh="让我们的专业团队为您处理洗碗机安装和其他家居改善需求。">Let our experienced team handle your dishwasher installation and other home improvement needs.</p>
+                    <a href="index.html#contact" class="btn" data-en="Get Free Quote" data-zh="免费报价">Get Free Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                <div class="footer-logo">
+                    <div class="logo-container">
+                        <img src="images/seattle_handyman_icon.webp" alt="Seattle Handyman Logo" class="logo-image footer-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="logo-fallback" style="display: none;">
+                            <div class="logo-icon">
+                                <div class="hammer-head"></div>
+                                <div class="hammer-handle"></div>
+                            </div>
+                            <div class="logo-separator">
+                                <div class="nail-line"></div>
+                                <div class="nail-head"></div>
+                            </div>
+                        </div>
+                        <div class="logo-text">
+                            <div class="logo-seattle">Seattle</div>
+                            <div class="logo-handyman">Handyman</div>
+                        </div>
+                    </div>
+                </div>
+                    <p data-en="Professional handyman services for Seattle homeowners. Licensed, insured, and committed to quality workmanship." data-zh="为西雅图房主提供专业维修服务。持证、保险，致力于优质工艺。">Professional handyman services for Seattle homeowners. Licensed, insured, and committed to quality workmanship.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Services" data-zh="服务">Services</h4>
+                    <ul>
+                        <li><a href="index.html#services" data-en="General Repairs" data-zh="一般维修">General Repairs</a></li>
+                        <li><a href="index.html#services" data-en="Electrical Work" data-zh="电气工程">Electrical Work</a></li>
+                        <li><a href="index.html#services" data-en="Plumbing" data-zh="管道工程">Plumbing</a></li>
+                        <li><a href="index.html#services" data-en="Painting & Drywall" data-zh="油漆和石膏板">Painting & Drywall</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Contact Info" data-zh="联系信息">Contact Info</h4>
+                    <p><i class="fab fa-weixin"></i> seattle_zhang</p>
+                    <p><i class="fas fa-envelope"></i> troubleshootandfixhandyman@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Seattle, WA</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-en="&copy; 2024 Seattle Handyman. All rights reserved." data-zh="&copy; 2024 西雅图维修服务。保留所有权利。">&copy; 2024 Seattle Handyman. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Language switching functionality
+        let currentLanguage = localStorage.getItem('language') || 'en'; // Load from localStorage or default to English
+        
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'zh' : 'en';
+            localStorage.setItem('language', currentLanguage); // Save to localStorage
+            updateLanguage();
+        }
+        
+        function updateLanguage() {
+            // Update all elements with data attributes
+            const elements = document.querySelectorAll('[data-en][data-zh]');
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-${currentLanguage}`);
+                if (text) {
+                    element.innerHTML = text;
+                }
+            });
+            
+            // Update image alt attributes
+            const images = document.querySelectorAll('[data-alt-en][data-alt-zh]');
+            images.forEach(img => {
+                const altText = img.getAttribute(`data-alt-${currentLanguage}`);
+                if (altText) {
+                    img.alt = altText;
+                }
+            });
+            
+            // Update page title
+            document.title = currentLanguage === 'en' 
+                ? 'Dishwasher Installation Guide - Seattle Handyman Services'
+                : '洗碗机安装指南 - 西雅图维修服务';
+            
+            // Update language switch button text
+            const langButton = document.querySelector('.lang-text');
+            if (langButton) {
+                langButton.textContent = currentLanguage === 'en' ? '中文' : 'English';
+            }
+        }
+        
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateLanguage();
+        });
+    </script>
+</body>
+</html>

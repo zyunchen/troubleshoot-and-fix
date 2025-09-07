@@ -28,6 +28,12 @@
 - `hero-bg.jpg` - 首页背景图 (可选)
 - `about-bg.jpg` - 关于我们背景图 (可选)
 
+### 指南图片
+- `dishwasher/diswasher_can_not_drain.jpg` - 洗碗机安装指南图片
+  - 从小红书帖子中下载的图片
+  - 显示垃圾处理器洗碗机连接端口示意图
+  - 圈出需要移除敲除塞的区域
+
 ## 使用说明：
 1. 当前使用 `seattle_handyman_icon.webp` 作为主Logo文件
 2. 网站会自动使用这个Logo文件作为导航和页脚图标
