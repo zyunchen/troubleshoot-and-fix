@@ -884,6 +884,14 @@ body {
         justify-content: center;
     }
 
+    .btn-large {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        min-width: 280px;
+        width: 100%;
+        max-width: 350px;
+    }
+
     .services-grid {
         grid-template-columns: 1fr;
     }
@@ -898,6 +906,13 @@ body {
         gap: 2rem;
     }
 
+    .contact-form button {
+        width: 100%;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        margin-top: auto;
+    }
+
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -907,6 +922,29 @@ body {
     .about-stats {
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
+    }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+    .btn-large {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        min-width: 250px;
+        max-width: 300px;
+    }
+
+    .contact-form button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
     }
 
     .stat {
