@@ -84,6 +84,15 @@ contactForm.addEventListener('submit', function(e) {
             contactForm.reset();
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
+            
+            // Track form submission success
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'form_submit', {
+                    'event_category': 'Contact',
+                    'event_label': 'Contact Form',
+                    'value': 1
+                });
+            }
         }, function(error) {
             console.error('EmailJS Error:', error);
             showNotification('Sorry, there was an error sending your message. Please try again or contact us directly.', 'error');
