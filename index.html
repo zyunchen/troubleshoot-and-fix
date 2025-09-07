@@ -45,16 +45,24 @@
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#home" class="nav-link" data-en="Home" data-zh="首页">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#pricing" class="nav-link" data-en="Pricing" data-zh="价格">Pricing</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
+                    <a href="#services" class="nav-link" data-en="Services" data-zh="服务">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#about" class="nav-link" data-en="About" data-zh="关于我们">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-en="Contact" data-zh="联系我们">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <button class="language-switch" onclick="toggleLanguage()">
+                        <span class="lang-text" data-en="中文" data-zh="English">中文</span>
+                    </button>
                 </li>
             </ul>
             <div class="hamburger">
@@ -69,18 +77,93 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">Professional Handyman Services in Seattle</h1>
-                <p class="hero-subtitle">Licensed, insured, and experienced. From small repairs to major home improvements, we've got you covered.</p>
+                <h1 class="hero-title" data-en="Professional Handyman Services in Seattle" data-zh="西雅图专业维修服务">Professional Handyman Services in Seattle</h1>
+                <p class="hero-subtitle" data-en="Licensed, insured, and experienced. From small repairs to major home improvements, we've got you covered." data-zh="持证、保险、经验丰富。从小修小补到大型家居改造，我们都能为您服务。">Licensed, insured, and experienced. From small repairs to major home improvements, we've got you covered.</p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary btn-large">Get Free Quote</a>
+                    <a href="#contact" class="btn btn-primary btn-large" data-en="Get Free Quote" data-zh="免费报价">Get Free Quote</a>
                 </div>
             </div>
             <div class="hero-image">
                 <div class="hero-card">
                     <i class="fas fa-home"></i>
-                    <h3>Trusted by Seattle Homeowners</h3>
-                    <p>Over 500+ successful projects completed</p>
+                    <h3 data-en="Trusted by Seattle Homeowners" data-zh="西雅图房主信赖之选">Trusted by Seattle Homeowners</h3>
+                    <p data-en="Over 500+ successful projects completed" data-zh="已完成500+成功项目">Over 500+ successful projects completed</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="Common Services & Pricing" data-zh="常见服务及价格">Common Services & Pricing</h2>
+                <p data-en="Transparent pricing for popular handyman services in Seattle" data-zh="西雅图热门维修服务透明价格">Transparent pricing for popular handyman services in Seattle</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-category">
+                    <h3 data-en="Electrical Services" data-zh="电气服务">Electrical Services</h3>
+                    <div class="pricing-item">
+                        <span class="service-name" data-en="Light Installation" data-zh="更换灯具">Light Installation</span>
+                        <span class="service-price">$60 - $120</span>
+                    </div>
+                    <div class="pricing-item">
+                        <span class="service-name" data-en="Smart Switch Installation" data-zh="智能开关安装">Smart Switch Installation</span>
+                        <span class="service-price">$25</span>
+                    </div>
+                    <div class="pricing-item">
+                        <span class="service-name" data-en="Smart Door Lock Installation" data-zh="智能门锁安装">Smart Door Lock Installation</span>
+                        <span class="service-price">$60</span>
+                    </div>
+                    <div class="pricing-item">
+                        <span class="service-name" data-en="Smart Doorbell Installation" data-zh="智能门铃安装">Smart Doorbell Installation</span>
+                        <span class="service-price">$40</span>
+                    </div>
+                </div>
+                
+                <div class="pricing-category">
+                    <h3 data-en="Plumbing Services" data-zh="管道服务">Plumbing Services</h3>
+                    <div class="pricing-item">
+                        <span class="service-name" data-en="Faucet Replacement" data-zh="更换水龙头">Faucet Replacement</span>
+                        <span class="service-price">$80 - $120</span>
+                    </div>
+                    <div class="pricing-item">
+                        <span class="service-name" data-en="Garbage Disposal Installation" data-zh="安装垃圾处理器">Garbage Disposal Installation</span>
+                        <span class="service-price">$100</span>
+                    </div>
+                    <div class="pricing-item">
+                        <span class="service-name" data-en="Drain Pipe Replacement" data-zh="更换下水管">Drain Pipe Replacement</span>
+                        <span class="service-price">$60</span>
+                    </div>
+                    <div class="pricing-item">
+                        <span class="service-name" data-en="Water Filter Installation" data-zh="安装净水器">Water Filter Installation</span>
+                        <span class="service-price">$120 - $150</span>
+                    </div>
+                </div>
+                
+                <div class="pricing-category">
+                    <h3 data-en="Installation Services" data-zh="安装服务">Installation Services</h3>
+                    <div class="pricing-item">
+                        <span class="service-name" data-en="TV Mount Installation" data-zh="安装电视架">TV Mount Installation</span>
+                        <span class="service-price">$80 - $120</span>
+                    </div>
+                    <div class="pricing-item">
+                        <span class="service-name" data-en="Security Camera Installation" data-zh="监控摄像头安装">Security Camera Installation</span>
+                        <span class="service-price">$60</span>
+                    </div>
+                    <div class="pricing-item">
+                        <span class="service-name" data-en="Solar Camera Installation" data-zh="太阳能摄像头安装">Solar Camera Installation</span>
+                        <span class="service-price">$20</span>
+                    </div>
+                    <div class="pricing-item">
+                        <span class="service-name" data-en="Garage Door Opener Installation" data-zh="车库门开启器安装">Garage Door Opener Installation</span>
+                        <span class="service-price">$200</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pricing-note">
+                <p data-en="<strong>Minimum charge $80</strong> | $20 additional for distant locations | Furniture installation - please send photos for quote" data-zh="<strong>最低收费 $80</strong> | 距离较远加收 $20 | 家具安装请发图片报价"><strong>Minimum charge $80</strong> | $20 additional for distant locations | Furniture installation - please send photos for quote</p>
+                <p data-en="All prices are estimates. Please contact us for accurate pricing based on your specific needs." data-zh="所有价格仅供参考，具体报价请联系我们获取准确价格">All prices are estimates. Please contact us for accurate pricing based on your specific needs.</p>
             </div>
         </div>
     </section>
@@ -89,51 +172,51 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2>Our Services</h2>
-                <p>Comprehensive home repair and maintenance solutions</p>
+                <h2 data-en="Our Services" data-zh="我们的服务">Our Services</h2>
+                <p data-en="Comprehensive home repair and maintenance solutions" data-zh="全面的家居维修和维护解决方案">Comprehensive home repair and maintenance solutions</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-hammer"></i>
                     </div>
-                    <h3>General Repairs</h3>
-                    <p>Door repairs, window fixes, cabinet adjustments, and general maintenance tasks around your home.</p>
+                    <h3 data-en="General Repairs" data-zh="一般维修">General Repairs</h3>
+                    <p data-en="Door repairs, window fixes, cabinet adjustments, and general maintenance tasks around your home." data-zh="门维修、窗户修理、橱柜调整以及您家周围的一般维护任务。">Door repairs, window fixes, cabinet adjustments, and general maintenance tasks around your home.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-bolt"></i>
                     </div>
-                    <h3>Electrical Work</h3>
-                    <p>Light fixture installation, outlet repairs, switch replacements, and basic electrical troubleshooting.</p>
+                    <h3 data-en="Electrical Work" data-zh="电气工程">Electrical Work</h3>
+                    <p data-en="Light fixture installation, outlet repairs, switch replacements, and basic electrical troubleshooting." data-zh="灯具安装、插座维修、开关更换和基本电气故障排除。">Light fixture installation, outlet repairs, switch replacements, and basic electrical troubleshooting.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-tint"></i>
                     </div>
-                    <h3>Plumbing</h3>
-                    <p>Faucet repairs, toilet fixes, pipe maintenance, and minor plumbing installations.</p>
+                    <h3 data-en="Plumbing" data-zh="管道工程">Plumbing</h3>
+                    <p data-en="Faucet repairs, toilet fixes, pipe maintenance, and minor plumbing installations." data-zh="水龙头维修、马桶修理、管道维护和小型管道安装。">Faucet repairs, toilet fixes, pipe maintenance, and minor plumbing installations.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-paint-brush"></i>
                     </div>
-                    <h3>Painting & Drywall</h3>
-                    <p>Interior and exterior painting, drywall repairs, texture matching, and color consultation.</p>
+                    <h3 data-en="Painting & Drywall" data-zh="油漆和石膏板">Painting & Drywall</h3>
+                    <p data-en="Interior and exterior painting, drywall repairs, texture matching, and color consultation." data-zh="室内外油漆、石膏板维修、纹理匹配和颜色咨询。">Interior and exterior painting, drywall repairs, texture matching, and color consultation.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-couch"></i>
                     </div>
-                    <h3>Furniture Assembly</h3>
-                    <p>IKEA furniture, office equipment, and custom furniture assembly with precision and care.</p>
+                    <h3 data-en="Furniture Assembly" data-zh="家具组装">Furniture Assembly</h3>
+                    <p data-en="IKEA furniture, office equipment, and custom furniture assembly with precision and care." data-zh="宜家家具、办公设备和定制家具组装，精确细致。">IKEA furniture, office equipment, and custom furniture assembly with precision and care.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-tools"></i>
                     </div>
-                    <h3>Custom Projects</h3>
-                    <p>Shelving, storage solutions, mounting TVs, and other custom home improvement projects.</p>
+                    <h3 data-en="Custom Projects" data-zh="定制项目">Custom Projects</h3>
+                    <p data-en="Shelving, storage solutions, mounting TVs, and other custom home improvement projects." data-zh="货架、存储解决方案、电视安装和其他定制家居改善项目。">Shelving, storage solutions, mounting TVs, and other custom home improvement projects.</p>
                 </div>
             </div>
         </div>
@@ -144,34 +227,34 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>Why Choose Our Seattle Handyman Services?</h2>
+                    <h2 data-en="Why Choose Our Seattle Handyman Services?" data-zh="为什么选择我们的西雅图维修服务？">Why Choose Our Seattle Handyman Services?</h2>
                     <div class="about-features">
                         <div class="feature">
                             <i class="fas fa-shield-alt"></i>
                             <div>
-                                <h4>Licensed & Insured</h4>
-                                <p>Fully licensed and insured for your peace of mind and protection.</p>
+                                <h4 data-en="Licensed & Insured" data-zh="持证和保险">Licensed & Insured</h4>
+                                <p data-en="Fully licensed and insured for your peace of mind and protection." data-zh="完全持证和保险，让您安心无忧。">Fully licensed and insured for your peace of mind and protection.</p>
                             </div>
                         </div>
                         <div class="feature">
                             <i class="fas fa-clock"></i>
                             <div>
-                                <h4>Flexible Scheduling</h4>
-                                <p>Available evenings and weekends to fit your busy Seattle lifestyle.</p>
+                                <h4 data-en="Flexible Scheduling" data-zh="灵活安排">Flexible Scheduling</h4>
+                                <p data-en="Available evenings and weekends to fit your busy Seattle lifestyle." data-zh="晚上和周末都可提供服务，适应您忙碌的西雅图生活。">Available evenings and weekends to fit your busy Seattle lifestyle.</p>
                             </div>
                         </div>
                         <div class="feature">
                             <i class="fas fa-star"></i>
                             <div>
-                                <h4>Quality Guarantee</h4>
-                                <p>100% satisfaction guarantee on all our work with follow-up support.</p>
+                                <h4 data-en="Quality Guarantee" data-zh="质量保证">Quality Guarantee</h4>
+                                <p data-en="100% satisfaction guarantee on all our work with follow-up support." data-zh="所有工作100%满意保证，并提供后续支持。">100% satisfaction guarantee on all our work with follow-up support.</p>
                             </div>
                         </div>
                         <div class="feature">
                             <i class="fas fa-dollar-sign"></i>
                             <div>
-                                <h4>Fair Pricing</h4>
-                                <p>Transparent, competitive pricing with no hidden fees or surprises.</p>
+                                <h4 data-en="Fair Pricing" data-zh="公平定价">Fair Pricing</h4>
+                                <p data-en="Transparent, competitive pricing with no hidden fees or surprises." data-zh="透明、有竞争力的价格，无隐藏费用或意外收费。">Transparent, competitive pricing with no hidden fees or surprises.</p>
                             </div>
                         </div>
                     </div>
@@ -179,15 +262,15 @@
                 <div class="about-stats">
                     <div class="stat">
                         <h3>500+</h3>
-                        <p>Projects Completed</p>
+                        <p data-en="Projects Completed" data-zh="完成项目">Projects Completed</p>
                     </div>
                     <div class="stat">
                         <h3>5+</h3>
-                        <p>Years Experience</p>
+                        <p data-en="Years Experience" data-zh="年经验">Years Experience</p>
                     </div>
                     <div class="stat">
                         <h3>100%</h3>
-                        <p>Satisfaction Rate</p>
+                        <p data-en="Satisfaction Rate" data-zh="满意度">Satisfaction Rate</p>
                     </div>
                 </div>
             </div>
@@ -198,48 +281,48 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2>Get Your Free Quote Today</h2>
-                <p>Ready to tackle your home improvement project? Contact us for a free estimate.</p>
+                <h2 data-en="Get Your Free Quote Today" data-zh="今天获取免费报价">Get Your Free Quote Today</h2>
+                <p data-en="Ready to tackle your home improvement project? Contact us for a free estimate." data-zh="准备开始您的家居改善项目了吗？联系我们获取免费估价。">Ready to tackle your home improvement project? Contact us for a free estimate.</p>
             </div>
             <div class="contact-content">
                 <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            <input type="email" id="email" name="email" placeholder="Your Email" data-placeholder-en="Your Email" data-placeholder-zh="您的邮箱" required>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Describe your project..." rows="8" required></textarea>
+                            <textarea id="message" name="message" placeholder="Describe your project..." data-placeholder-en="Describe your project..." data-placeholder-zh="描述您的项目..." rows="8" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary"> Send and Get Free Quote Now!</button>
+                        <button type="submit" class="btn btn-primary" data-en="Send and Get Free Quote Now!" data-zh="发送并立即获取免费报价！"> Send and Get Free Quote Now!</button>
                     </form>
                 </div>
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fab fa-weixin"></i>
                         <div>
-                            <h4>WeChat</h4>
+                            <h4 data-en="WeChat" data-zh="微信">WeChat</h4>
                             <p>seattle_zhang</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h4>Email</h4>
+                            <h4 data-en="Email" data-zh="邮箱">Email</h4>
                             <p><a href="mailto:troubleshootandfixhandyman@gmail.com">troubleshootandfixhandyman@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h4>Service Area</h4>
-                            <p>Seattle and surrounding areas</p>
+                            <h4 data-en="Service Area" data-zh="服务区域">Service Area</h4>
+                            <p data-en="Seattle and surrounding areas" data-zh="西雅图及周边地区">Seattle and surrounding areas</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-clock"></i>
                         <div>
-                            <h4>Hours</h4>
-                            <p>Mon-Fri: 8AM-6PM<br>Sat: 9AM-4PM<br>Sun: Emergency Only</p>
+                            <h4 data-en="Hours" data-zh="营业时间">Hours</h4>
+                            <p data-en="Mon-Fri: 8AM-6PM<br>Sat: 9AM-4PM<br>Sun: Emergency Only" data-zh="周一至周五: 上午8点-下午6点<br>周六: 上午9点-下午4点<br>周日: 仅紧急情况">Mon-Fri: 8AM-6PM<br>Sat: 9AM-4PM<br>Sun: Emergency Only</p>
                         </div>
                     </div>
                 </div>
@@ -271,30 +354,75 @@
                         </div>
                     </div>
                 </div>
-                    <p>Professional handyman services for Seattle homeowners. Licensed, insured, and committed to quality workmanship.</p>
+                    <p data-en="Professional handyman services for Seattle homeowners. Licensed, insured, and committed to quality workmanship." data-zh="为西雅图房主提供专业维修服务。持证、保险，致力于优质工艺。">Professional handyman services for Seattle homeowners. Licensed, insured, and committed to quality workmanship.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Services</h4>
+                    <h4 data-en="Services" data-zh="服务">Services</h4>
                     <ul>
-                        <li><a href="#services">General Repairs</a></li>
-                        <li><a href="#services">Electrical Work</a></li>
-                        <li><a href="#services">Plumbing</a></li>
-                        <li><a href="#services">Painting & Drywall</a></li>
+                        <li><a href="#services" data-en="General Repairs" data-zh="一般维修">General Repairs</a></li>
+                        <li><a href="#services" data-en="Electrical Work" data-zh="电气工程">Electrical Work</a></li>
+                        <li><a href="#services" data-en="Plumbing" data-zh="管道工程">Plumbing</a></li>
+                        <li><a href="#services" data-en="Painting & Drywall" data-zh="油漆和石膏板">Painting & Drywall</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact Info</h4>
+                    <h4 data-en="Contact Info" data-zh="联系信息">Contact Info</h4>
                     <p><i class="fab fa-weixin"></i> seattle_zhang</p>
                     <p><i class="fas fa-envelope"></i> troubleshootandfixhandyman@gmail.com</p>
                     <p><i class="fas fa-map-marker-alt"></i> Seattle, WA</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Seattle Handyman. All rights reserved.</p>
+                <p data-en="&copy; 2024 Seattle Handyman. All rights reserved." data-zh="&copy; 2024 西雅图维修服务。保留所有权利。">&copy; 2024 Seattle Handyman. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Language switching functionality
+        let currentLanguage = 'en'; // Default to English
+        
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'zh' : 'en';
+            updateLanguage();
+        }
+        
+        function updateLanguage() {
+            // Update all elements with data attributes
+            const elements = document.querySelectorAll('[data-en][data-zh]');
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-${currentLanguage}`);
+                if (text) {
+                    element.innerHTML = text;
+                }
+            });
+            
+            // Update placeholder attributes
+            const inputs = document.querySelectorAll('[data-placeholder-en][data-placeholder-zh]');
+            inputs.forEach(input => {
+                const placeholder = input.getAttribute(`data-placeholder-${currentLanguage}`);
+                if (placeholder) {
+                    input.placeholder = placeholder;
+                }
+            });
+            
+            // Update language switch button text
+            const langButton = document.querySelector('.lang-text');
+            if (langButton) {
+                langButton.textContent = currentLanguage === 'en' ? '中文' : 'English';
+            }
+            
+            // Update page title
+            document.title = currentLanguage === 'en' 
+                ? 'Seattle Handyman Services - Professional Home Repairs & Maintenance'
+                : '西雅图维修服务 - 专业家居维修与维护';
+        }
+        
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateLanguage();
+        });
+    </script>
 </body>
 </html>

@@ -159,6 +159,24 @@ body {
     color: #F8E71C;
 }
 
+.language-switch {
+    background: #F8E71C;
+    color: #000;
+    border: 2px solid #000;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.language-switch:hover {
+    background: #000;
+    color: #F8E71C;
+    transform: translateY(-2px);
+}
+
 .nav-link::after {
     content: '';
     position: absolute;
@@ -309,6 +327,77 @@ body {
 
 .hero-card p {
     opacity: 0.9;
+}
+
+/* Pricing Section */
+.pricing {
+    padding: 5rem 0;
+    background: #F8E71C;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.pricing-category {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #000;
+}
+
+.pricing-category h3 {
+    color: #000;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.pricing-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.pricing-item:last-child {
+    border-bottom: none;
+}
+
+.service-name {
+    color: #333;
+    font-weight: 500;
+    flex: 1;
+}
+
+.service-price {
+    color: #000;
+    font-weight: 700;
+    font-size: 1.1rem;
+    background: #F8E71C;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #000;
+}
+
+.pricing-note {
+    text-align: center;
+    background: #000;
+    color: #F8E71C;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.pricing-note p {
+    margin: 0.5rem 0;
+    font-weight: 500;
 }
 
 /* Services Section */
