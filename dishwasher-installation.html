@@ -3,8 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dishwasher Installation Guide - Seattle Handyman Services</title>
-    <meta name="description" content="Professional dishwasher installation guide and troubleshooting tips for Seattle homeowners.">
+    <title data-en="Dishwasher Can't Drain? Complete Installation & Troubleshooting Guide - Seattle Handyman" data-zh="洗碗机无法排水？完整安装与故障排除指南 - 西雅图维修">Dishwasher Can't Drain? Complete Installation & Troubleshooting Guide - Seattle Handyman</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" data-en="Fix dishwasher drainage issues with our expert guide. Learn how to install dishwashers properly and troubleshoot common drainage problems in Seattle homes." data-zh="通过我们的专家指南解决洗碗机排水问题。学习如何正确安装洗碗机并排除西雅图家庭中常见的排水问题。">
+    <meta name="keywords" data-en="dishwasher installation, dishwasher drain problems, dishwasher troubleshooting, Seattle handyman, appliance repair, dishwasher maintenance" data-zh="洗碗机安装,洗碗机排水问题,洗碗机故障排除,西雅图维修,家电维修,洗碗机维护">
+    <meta name="author" content="Seattle Handyman Services">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" data-en="Dishwasher Can't Drain? Complete Installation & Troubleshooting Guide" data-zh="洗碗机无法排水？完整安装与故障排除指南">
+    <meta property="og:description" data-en="Expert guide to fix dishwasher drainage issues and proper installation techniques for Seattle homeowners." data-zh="为西雅图房主提供解决洗碗机排水问题和正确安装技术的专家指南。">
+    <meta property="og:image" content="images/dishwasher/diswasher_can_not_drain.jpg">
+    <meta property="og:url" content="https://troubleshootandfixhandyman.com/dishwasher-installation.html">
+    <meta property="og:site_name" content="Seattle Handyman Services">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" data-en="Dishwasher Can't Drain? Complete Installation & Troubleshooting Guide" data-zh="洗碗机无法排水？完整安装与故障排除指南">
+    <meta property="twitter:description" data-en="Expert guide to fix dishwasher drainage issues and proper installation techniques." data-zh="解决洗碗机排水问题和正确安装技术的专家指南。">
+    <meta property="twitter:image" content="images/dishwasher/diswasher_can_not_drain.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://troubleshootandfixhandyman.com/dishwasher-installation.html">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Dishwasher Installation and Drain Troubleshooting Guide",
+        "description": "Complete guide to installing dishwashers and fixing drainage problems",
+        "image": "images/dishwasher/diswasher_can_not_drain.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "Seattle Handyman Services",
+            "url": "https://troubleshootandfixhandyman.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Seattle Handyman Services",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "images/seattle_handyman_icon.webp"
+            }
+        },
+        "datePublished": "2024-01-01",
+        "dateModified": "2024-01-01",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://troubleshootandfixhandyman.com/dishwasher-installation.html"
+        },
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Identify Drainage Problem",
+                "text": "Check if the dishwasher can't drain due to clogged filters or improper installation"
+            },
+            {
+                "@type": "HowToStep", 
+                "name": "Remove Knockout Plug",
+                "text": "Remove the knockout plug from the garbage disposal to allow proper drainage"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Install Drain Hose",
+                "text": "Properly connect the dishwasher drain hose to the garbage disposal"
+            }
+        ]
+    }
+    </script>
+    
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -354,6 +425,15 @@
             if (langButton) {
                 langButton.textContent = currentLanguage === 'en' ? '中文' : 'English';
             }
+            
+            // Update title attributes for links
+            const linksWithTitle = document.querySelectorAll('[data-title-en][data-title-zh]');
+            linksWithTitle.forEach(link => {
+                const title = link.getAttribute(`data-title-${currentLanguage}`);
+                if (title) {
+                    link.title = title;
+                }
+            });
         }
         
         // Initialize language on page load

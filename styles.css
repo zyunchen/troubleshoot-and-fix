@@ -29,6 +29,7 @@ body {
     padding: 1rem 0;
     transition: all 0.3s ease;
     border-bottom: 1px solid rgba(248, 231, 28, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -178,7 +179,10 @@ body {
 }
 
 /* Service card guide button hover effect */
-.service-card a[href*="dishwasher-installation.html"]:hover {
+.service-card a[href*="dishwasher-installation.html"]:hover,
+.service-card a[href*="faucet-repair-guide.html"]:hover,
+.service-card a[href*="curtain-installation-case1.html"]:hover,
+.service-card a[href*="curtain-installation-case2.html"]:hover {
     background: #000 !important;
     color: #F8E71C !important;
     transform: translateY(-3px) !important;
