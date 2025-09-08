@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GA Test - Simple</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WST8T5HZLD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WST8T5HZLD');
+    </script>
+    
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
+        .status { padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+        button { background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Google Analytics 简化测试</h1>
+    
+    <div id="results"></div>
+    
+    <button onclick="runDiagnostics()">运行诊断</button>
+    <button onclick="sendTestEvent()">发送测试事件</button>
+    <button onclick="checkNetwork()">检查网络请求</button>
+    
+    <h2>手动检查步骤:</h2>
+    <ol>
+        <li>打开浏览器开发者工具 (F12)</li>
+        <li>切换到 "网络" 标签</li>
+        <li>刷新页面</li>
+        <li>查找 "googletagmanager.com" 的请求</li>
+        <li>检查请求状态是否为 200</li>
+    </ol>
+    
+    <h2>可能的问题:</h2>
+    <ul>
+        <li><strong>域名不匹配:</strong> GA中配置的域名与实际不符</li>
+        <li><strong>文件未部署:</strong> 更新后的文件没有上传到服务器</li>
+        <li><strong>缓存问题:</strong> 浏览器或CDN缓存了旧版本</li>
+        <li><strong>网络问题:</strong> 无法访问 googletagmanager.com</li>
+        <li><strong>GA配置错误:</strong> 测量ID或属性设置有问题</li>
+    </ul>
+
+    <script>
+        function addResult(message, type = 'info') {
+            const results = document.getElementById('results');
+            const div = document.createElement('div');
+            div.className = `status ${type}`;
+            div.innerHTML = message;
+            results.appendChild(div);
+        }
+
+        function runDiagnostics() {
+            document.getElementById('results').innerHTML = '';
+            
+            addResult('🔍 开始诊断...', 'info');
+            
+            // 检查gtag函数
+            if (typeof gtag === 'function') {
+                addResult('✅ gtag函数已加载', 'success');
+            } else {
+                addResult('❌ gtag函数未找到', 'error');
+            }
+            
+            // 检查dataLayer
+            if (window.dataLayer && Array.isArray(window.dataLayer)) {
+                addResult('✅ dataLayer已初始化', 'success');
+                addResult(`📊 dataLayer长度: ${window.dataLayer.length}`, 'info');
+            } else {
+                addResult('❌ dataLayer未初始化', 'error');
+            }
+            
+            // 检查脚本加载
+            const scripts = document.querySelectorAll('script[src*="googletagmanager.com"]');
+            if (scripts.length > 0) {
+                addResult('✅ Google Analytics脚本已找到', 'success');
+                addResult(`🔗 脚本源: ${scripts[0].src}`, 'info');
+            } else {
+                addResult('❌ 未找到Google Analytics脚本', 'error');
+            }
+            
+            // 检查测量ID
+            const hasCorrectId = scripts.length > 0 && scripts[0].src.includes('G-WST8T5HZLD');
+            if (hasCorrectId) {
+                addResult('✅ 测量ID正确', 'success');
+            } else {
+                addResult('❌ 测量ID不匹配', 'error');
+            }
+            
+            // 检查网络连接
+            fetch('https://www.googletagmanager.com/gtag/js?id=G-WST8T5HZLD')
+                .then(response => {
+                    if (response.ok) {
+                        addResult('✅ 可以访问Google服务器', 'success');
+                    } else {
+                        addResult(`❌ Google服务器返回错误: ${response.status}`, 'error');
+                    }
+                })
+                .catch(error => {
+                    addResult(`❌ 网络错误: ${error.message}`, 'error');
+                });
+        }
+
+        function sendTestEvent() {
+            if (typeof gtag === 'function') {
+                try {
+                    gtag('event', 'test_event', {
+                        'event_category': 'diagnostic',
+                        'event_label': 'manual_test',
+                        'value': 1
+                    });
+                    addResult('✅ 测试事件已发送', 'success');
+                    addResult('💡 请在GA实时报告中查看此事件', 'info');
+                } catch (error) {
+                    addResult(`❌ 发送事件失败: ${error.message}`, 'error');
+                }
+            } else {
+                addResult('❌ gtag函数不可用', 'error');
+            }
+        }
+
+        function checkNetwork() {
+            addResult('🔍 检查网络请求...', 'info');
+            addResult('💡 请查看开发者工具的"网络"标签', 'info');
+            addResult('🔍 查找包含"googletagmanager.com"的请求', 'info');
+        }
+
+        // 页面加载时自动运行诊断
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                addResult('🚀 页面加载完成，开始自动诊断...', 'info');
+                runDiagnostics();
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
